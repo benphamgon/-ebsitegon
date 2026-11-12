@@ -7,26 +7,29 @@ Website giới thiệu GỌN Fitness & Yoga, dựng lại từ bản thiết k�
 ```
 index.html     # Nội dung các section
 styles.css     # Giao diện (màu, font, responsive)
-script.js      # Hiệu ứng: hero dial, chữ chạy, slider PT, popup, form
+motion.js      # Hiệu ứng theo cuộn: hero chuỗi ảnh + vòng chia độ, logo GỌN → video, vòng ảnh 3D
+script.js      # Menu, slider PT, popup, form, âm thanh video
 config.js      # Cấu hình nơi nhận dữ liệu form
 assets/img     # Ảnh (webp)
-assets/video   # Video hero
+assets/frames  # Chuỗi ảnh hero (máy tính), assets/frames-m (điện thoại)
+assets/video   # Video giới thiệu (bản thường + bản nhẹ cho điện thoại)
+assets/vendor  # GSAP + ScrollTrigger + Lenis (lưu sẵn, không phụ thuộc CDN)
 ```
 
 ## Các section
 
-1. Hero video + vòng chia độ "LIVE STRONG / LIVE LONG / FIT FOR LIFE"
-2. Tuyên ngôn "Chúng tôi tin rằng để có một sức khỏe tốt — không cần phức tạp"
-3. Video tour (bấm PLAY VIDEO mở popup)
-4. Các bộ môn nổi bật: Gym / Dance / Yoga
-5. Dịch vụ dành cho Member: Locker, Sauna, Stretching (thẻ xếp chồng khi cuộn)
-6. Chương trình thành viên + form tư vấn
-7. Slider Huấn luyện viên cá nhân
-8. Đội ngũ PT + 4 cam kết
-9. Kết quả học viên (trước / sau)
-10. Form "Bắt đầu thay đổi ngay"
-11. Bài viết mới (Tin tức / Blog)
-12. CTA + Footer, nút tư vấn nổi
+1. Hero ghim màn hình: người kéo lat pulldown chuyển động theo cuộn, vòng chia độ xoay đổi chữ
+   "LIVE STRONG / LIVE LONG / FIT FOR LIFE", rồi hiện tuyên ngôn
+2. Chữ O → logo GỌN → ảnh bay vào → video giới thiệu mở ra (tự phát, có nút âm thanh)
+3. Các bộ môn nổi bật: Gym / Dance / Yoga
+4. Dịch vụ dành cho Member: Locker, Sauna, Stretching (thẻ xếp chồng khi cuộn)
+5. Chương trình thành viên + form tư vấn
+6. Slider Huấn luyện viên cá nhân
+7. Đội ngũ PT + 4 cam kết
+8. Kết quả học viên (trước / sau)
+9. Form "Bắt đầu thay đổi ngay"
+10. Bài viết mới (Tin tức / Blog)
+11. CTA + Footer, nút tư vấn nổi
 
 ## Chạy thử
 

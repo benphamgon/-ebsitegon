@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/vendor/lenis.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -44,53 +45,55 @@
   </div>
 
   <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
-        <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
-        <source src="assets/video/hero.mp4" type="video/mp4" />
-      </video>
-      <div class="hero__shade"></div>
-
-      <div class="dial" aria-hidden="true">
-        <svg class="dial__svg" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
-          <defs>
-            <path id="arcText" d="M -200 470 Q 720 -40 1640 470" />
-          </defs>
-          <g class="dial__rings" fill="none" stroke="#fff">
-            <path d="M -200 470 Q 720 0 1640 470" stroke-width="2" opacity=".9"/>
-            <path d="M -200 520 Q 720 60 1640 520" stroke-width="2" opacity=".9"/>
+    <!-- ============ HERO (ghim màn hình, chuyển động theo cuộn) ============ -->
+    <section class="hero" data-hero>
+      <div class="hero__pin">
+        <img class="hero__poster" src="assets/frames/f001.webp" alt="" aria-hidden="true" />
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+        <div class="hero__shade"></div>
+        <div class="hero__dark"></div>
+        <svg class="dial" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <g transform="translate(720 1000) scale(1 .36)">
+            <g id="dialRot">
+              <circle r="1400" fill="none" stroke="#fff" stroke-width="2" vector-effect="non-scaling-stroke" />
+              <circle r="1330" fill="none" stroke="#fff" stroke-width="2" vector-effect="non-scaling-stroke" />
+              <g id="dialTicks"></g>
+              <path id="dialPath" d="M -1500 0 A 1500 1500 0 1 1 1500 0 A 1500 1500 0 1 1 -1500 0" fill="none" />
+              <g id="dialWords"></g>
+            </g>
           </g>
-          <g class="dial__ticks" id="dialTicks"></g>
-          <polygon points="705,250 735,250 720,232" fill="#fff" />
+          <polygon points="704,494 736,494 720,476" fill="#fff" />
+          <line x1="720" y1="521" x2="720" y2="900" stroke="#fff" stroke-width="3" />
         </svg>
-        <div class="dial__words">
-          <span class="is-active">LIVE&nbsp;&nbsp;STRONG</span>
-          <span>LIVE&nbsp;&nbsp;LONG</span>
-          <span>FIT&nbsp;&nbsp;FOR&nbsp;&nbsp;LIFE</span>
-        </div>
+        <h1 class="sr-only">GỌN Fitness &amp; Yoga — Live Strong, Live Long, Fit For Life</h1>
+        <h2 class="hero__headline" data-chars>Chúng tôi tin rằng để có một sức khỏe tốt — <em>không cần phức tạp</em></h2>
+        <div class="hero__scroll" aria-hidden="true"><span>CUỘN XUỐNG</span><i></i></div>
       </div>
-
-      <a href="#about" class="hero__scroll" aria-label="Cuộn xuống">
-        <span>SCROLL</span><i></i>
-      </a>
     </section>
 
-    <!-- ============ MANIFESTO ============ -->
-    <section class="manifesto" id="about">
-      <div class="manifesto__bigO" aria-hidden="true">O</div>
-      <h2 class="manifesto__title split-reveal">Chúng tôi tin rằng để có một sức khỏe tốt — <em>không cần phức tạp</em></h2>
-      <p class="manifesto__text word-reveal">Với các bộ môn như Gym, Fitness, Dance, Yoga, GỌN không chỉ là nơi tập luyện – mà là nơi bạn tìm thấy phiên bản tốt nhất của chính mình, mỗi ngày.</p>
-    </section>
-
-    <!-- ============ VIDEO TOUR ============ -->
-    <section class="tour">
-      <!-- Video tự phát (tắt tiếng, lặp lại) khi cuộn tới; bấm để bật/tắt âm thanh -->
-      <div class="tour__card tour__card--video reveal-scale">
-        <video class="tour__video" muted loop playsinline preload="none" poster="assets/img/tour-poster.jpg" aria-label="Video giới thiệu GỌN Fitness & Yoga">
-          <source src="assets/video/gon-tour-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
-          <source src="assets/video/gon-tour.mp4" type="video/mp4" />
-        </video>
+    <!-- ============ LOGO GỌN → VIDEO (ghim màn hình) ============ -->
+    <section class="brand" id="about" data-brand>
+      <div class="brand__pin">
+        <div class="brand__collage" aria-hidden="true">
+          <img class="cl cl-1" src="assets/img/mon-gym.webp" alt="" loading="lazy" />
+          <img class="cl cl-2" src="assets/img/blog-1.webp" alt="" loading="lazy" />
+          <img class="cl cl-3" src="assets/img/locker.webp" alt="" loading="lazy" />
+          <img class="cl cl-4" src="assets/img/blog-2.webp" alt="" loading="lazy" />
+          <img class="cl cl-5" src="assets/img/coach-thomas.webp" alt="" loading="lazy" />
+          <img class="cl cl-6" src="assets/img/sauna.webp" alt="" loading="lazy" />
+        </div>
+        <div class="brand__logo" aria-label="GỌN Fitness & Yoga">
+          <div class="bl-word"><span class="bl-g">G</span><span class="bl-o">O</span><span class="bl-n">N</span></div>
+          <div class="bl-dots"><i></i><i></i><i></i><i></i><b></b><i></i><i></i><i></i><i></i></div>
+          <div class="bl-sub">FITNESS &amp; YOGA</div>
+        </div>
+        <p class="brand__text" data-words>Với các bộ môn như Gym, Fitness, Dance, Yoga, GỌN không chỉ là nơi tập luyện – mà là nơi bạn tìm thấy phiên bản tốt nhất của chính mình, mỗi ngày.</p>
+        <div class="brand__video">
+          <video class="tour__video" muted loop playsinline preload="none" poster="assets/img/tour-poster.jpg" aria-label="Video giới thiệu GỌN Fitness & Yoga">
+            <source src="assets/video/gon-tour-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
+            <source src="assets/video/gon-tour.mp4" type="video/mp4" />
+          </video>
+        </div>
         <button class="tour__sound" type="button" aria-pressed="false" aria-label="Bật âm thanh">
           <svg class="ic-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
           <svg class="ic-on" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
@@ -103,7 +106,7 @@
     <section class="classes" id="classes">
       <div class="container">
         <div class="section-head section-head--dark">
-          <h2 class="reveal">Các bộ môn nổi bật tại GỌN</h2>
+          <h2 data-split>Các bộ môn nổi bật tại GỌN</h2>
           <div class="reveal">
             <p>Hành trình chăm sóc sức khỏe là một trải nghiệm mang đậm dấu ấn cá nhân. Hãy khám phá danh sách các bộ môn đa dạng của chúng tôi, từ rèn luyện sức mạnh, tăng cường dẻo dai đến giải phóng năng lượng, để tìm thấy niềm vui và động lực thực sự trên con đường của bạn.</p>
             <a href="#contact" class="link-arrow">TÌM HIỂU THÊM <span>→</span></a>
@@ -111,19 +114,19 @@
         </div>
         <div class="classes__grid">
           <article class="class-col reveal">
-            <div class="class-col__img"><img src="assets/img/mon-gym.webp" alt="Tập gym cùng huấn luyện viên" loading="lazy" /><h3>GYM</h3></div>
+            <div class="class-col__img" data-reveal-img><img src="assets/img/mon-gym.webp" alt="Tập gym cùng huấn luyện viên" loading="lazy" /><h3>GYM</h3></div>
             <ul class="tags">
               <li>Gym</li><li>Dance</li><li>Zumba</li><li>Pilates</li><li>Boxing</li><li>Kick Boxing</li><li>Group X</li><li>Cycling</li><li>Strength Training</li><li>Body Combat</li>
             </ul>
           </article>
           <article class="class-col reveal">
-            <div class="class-col__img"><img src="assets/img/mon-dance.webp" alt="Lớp dance" loading="lazy" /><h3>DANCE</h3></div>
+            <div class="class-col__img" data-reveal-img><img src="assets/img/mon-dance.webp" alt="Lớp dance" loading="lazy" /><h3>DANCE</h3></div>
             <ul class="tags">
               <li>Tiktok Dance</li><li>Sexy Dance</li><li>Dance Kid</li><li>Hip Hop</li><li>Ballet</li>
             </ul>
           </article>
           <article class="class-col reveal">
-            <div class="class-col__img"><img src="assets/img/mon-yoga.webp" alt="Lớp yoga" loading="lazy" /><h3>YOGA</h3></div>
+            <div class="class-col__img" data-reveal-img><img src="assets/img/mon-yoga.webp" alt="Lớp yoga" loading="lazy" /><h3>YOGA</h3></div>
             <ul class="tags">
               <li>Hatha Yoga</li><li>Vinyasa Yoga</li><li>Astanga Yoga</li><li>Yin Yoga</li><li>Restorative Yoga</li>
             </ul>
@@ -136,7 +139,7 @@
     <section class="services" id="service">
       <div class="container">
         <div class="section-head">
-          <h2 class="reveal">Dịch vụ dành cho Member</h2>
+          <h2 data-split>Dịch vụ dành cho Member</h2>
           <p class="reveal">Sau giờ luyện tập căng thẳng là lúc cơ thể bạn cần được thư giãn để tối ưu kết quả tập luyện. GỌN biết điều đó và chúng tôi cho bạn offer cực đã với những dịch vụ chuyên sâu.</p>
         </div>
         <div class="stack">
@@ -173,7 +176,7 @@
       <img class="member__bg" src="assets/img/member-bg.webp" alt="" aria-hidden="true" loading="lazy" />
       <div class="container member__grid">
         <div class="member__intro reveal">
-          <h2>Giới thiệu chương trình thành viên</h2>
+          <h2 data-split>Giới thiệu chương trình thành viên</h2>
           <p>Một phiên tập chuyên sâu dành riêng cho bạn cùng Master Yoga. Chương trình giúp bạn đi sâu vào từng tư thế (asana), chỉnh sửa định tuyến chi tiết và khám phá sự kết nối giữa cơ thể và hơi thở. Tìm lại sự cân bằng, tăng cường dẻo dai và tĩnh tại trong tâm trí.</p>
         </div>
         <div class="member__panel reveal">
@@ -238,7 +241,7 @@
           <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-thomas.webp" alt="HLV Thomas Nguyen" loading="lazy" /></div><figcaption><b>Thomas Nguyen</b><span>Kickfit Training</span></figcaption></figure>
           <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-vivian.webp" alt="HLV Vivian Le" loading="lazy" /></div><figcaption><b>Vivian Le</b><span>Yoga Master</span></figcaption></figure>
           <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-lucy.webp" alt="HLV Lucy Nguyen" loading="lazy" /></div><figcaption><b>Lucy Nguyen</b><span>Tiktok Dance</span></figcaption></figure>
-          <a href="#contact" class="link-arrow">Tất cả huấn luyện viên <span>→</span></a>
+          <a href="#contact" class="btn btn--accent coaches__all">Tất cả huấn luyện viên</a>
         </div>
       </div>
     </section>
@@ -251,24 +254,26 @@
           <cite>Chị A — Học viên lớp YOGA</cite>
         </blockquote>
       </div>
-      <div class="carousel" aria-label="Hình ảnh trước và sau">
-        <div class="carousel__track">
+      <div class="ring" data-ring aria-label="Hình ảnh trước và sau khi tập tại GỌN">
           <figure><img src="assets/img/before-1.webp" alt="Trước khi tập" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-1.webp" alt="Sau 3 tháng tập" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
           <figure><img src="assets/img/before-2.webp" alt="Trước khi tập" loading="lazy" /><figcaption>Trước</figcaption></figure>
-          <figure class="is-after"><img src="assets/img/after-1.webp" alt="Sau 3 tháng" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
-          <figure class="is-after"><img src="assets/img/after-2.webp" alt="Sau 3 tháng" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-2.webp" alt="Sau 3 tháng tập" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
           <figure><img src="assets/img/before-1.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
-          <figure><img src="assets/img/before-2.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
           <figure class="is-after"><img src="assets/img/after-1.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure><img src="assets/img/before-2.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
           <figure class="is-after"><img src="assets/img/after-2.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
-        </div>
+          <figure><img src="assets/img/before-1.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-1.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure><img src="assets/img/before-2.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-2.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
       </div>
     </section>
 
     <!-- ============ FORM ĐĂNG KÝ ============ -->
     <section class="signup" id="contact">
       <div class="container">
-        <h2 class="reveal">Bắt đầu thay đổi ngay</h2>
+        <h2 data-split>Bắt đầu thay đổi ngay</h2>
         <form class="form form--wide reveal" data-form>
           <label>Tên<input name="name" required placeholder="Nhập tên bạn" autocomplete="name" /></label>
           <label>Số điện thoại (Zalo)<input name="phone" required type="tel" placeholder="Nhập số điện thoại" autocomplete="tel" pattern="[0-9 +.]{9,15}" /></label>
@@ -284,7 +289,7 @@
     <!-- ============ BLOG ============ -->
     <section class="blog" id="blog">
       <div class="container">
-        <h2 class="blog__title reveal">Bài viết mới</h2>
+        <h2 class="blog__title" data-split>Bài viết mới</h2>
         <div class="blog__cols">
           <div>
             <h3 class="blog__cat">Tin tức</h3>
@@ -305,7 +310,7 @@
     <section class="cta">
       <div class="container">
         <div class="cta__card reveal-scale">
-          <img src="assets/img/cta.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/img/cta.webp" alt="" aria-hidden="true" loading="lazy" data-parallax />
           <div class="cta__body">
             <h2>Bắt đầu thay đổi<br />ngay hôm nay</h2>
             <p>Đa dạng lớp học được thiết kế để phù hợp<br />đúng với điểm xuất phát của bạn.</p>
@@ -369,6 +374,10 @@
 
   <div class="toast" role="status" aria-live="polite"></div>
 
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="motion.js"></script>
   <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
