@@ -366,9 +366,9 @@
     <div class="modal__backdrop" data-close-modal></div>
     <div class="modal__video">
       <button class="modal__close" data-close-modal aria-label="Đóng">×</button>
-      <video controls playsinline preload="none" poster="assets/img/hero-poster.jpg">
-        <source src="assets/video/hero.mp4" type="video/mp4" />
-      </video>
+      <!-- Video Facebook: iframe được tạo khi mở popup (script.js) để không tải trước và dừng khi đóng -->
+      <div class="modal__frame" data-fb-video="https://www.facebook.com/gonfit/videos/1384315956233112/"></div>
+      <a class="modal__fblink" href="https://www.facebook.com/gonfit/videos/1384315956233112/" target="_blank" rel="noopener">Không xem được? Mở video trên Facebook ↗</a>
     </div>
   </div>
 

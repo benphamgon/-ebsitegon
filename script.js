@@ -191,15 +191,21 @@
     lastFocus = document.activeElement;
     m.hidden = false;
     document.body.style.overflow = "hidden";
-    const f = $("input, video", m);
+    const f = $("input", m);
     if (f) setTimeout(() => f.focus(), 50);
-    if (id === "videoModal") $("video", m).play().catch(() => {});
+    const fb = $("[data-fb-video]", m);
+    if (fb) {
+      const src =
+        "https://www.facebook.com/plugins/video.php?show_text=false&autoplay=true&width=1280&href=" +
+        encodeURIComponent(fb.dataset.fbVideo);
+      fb.innerHTML = `<iframe src="${src}" title="Video giới thiệu GỌN" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    }
   };
   const closeModal = (m) => {
     m.hidden = true;
     document.body.style.overflow = "";
-    const v = $("video", m);
-    if (v) v.pause();
+    const fb = $("[data-fb-video]", m);
+    if (fb) fb.innerHTML = ""; // gỡ iframe để dừng phát
     if (lastFocus) lastFocus.focus();
   };
   $$("[data-open-modal]").forEach((b) => b.addEventListener("click", () => openModal("contactModal")));
