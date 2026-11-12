@@ -47,6 +47,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
         <source src="assets/video/hero.mp4" type="video/mp4" />
       </video>
       <div class="hero__shade"></div>
@@ -87,6 +88,7 @@
       <!-- Video tự phát (tắt tiếng, lặp lại) khi cuộn tới; bấm để bật/tắt âm thanh -->
       <div class="tour__card tour__card--video reveal-scale">
         <video class="tour__video" muted loop playsinline preload="none" poster="assets/img/tour-poster.jpg" aria-label="Video giới thiệu GỌN Fitness & Yoga">
+          <source src="assets/video/gon-tour-mobile.mp4" type="video/mp4" media="(max-width: 700px)" />
           <source src="assets/video/gon-tour.mp4" type="video/mp4" />
         </video>
         <button class="tour__sound" type="button" aria-pressed="false" aria-label="Bật âm thanh">
@@ -190,7 +192,7 @@
     <!-- ============ PT SLIDER ============ -->
     <section class="pt" id="trainer">
       <div class="pt__slides">
-        <img class="pt__slide is-active" src="assets/img/pt-1.webp" alt="Huấn luyện viên cá nhân hướng dẫn tập" />
+        <img class="pt__slide is-active" src="assets/img/pt-1.webp" alt="Huấn luyện viên cá nhân hướng dẫn tập" loading="lazy" />
         <img class="pt__slide" src="assets/img/pt-2.webp" alt="Hội viên tập luyện cùng PT" loading="lazy" />
         <img class="pt__slide" src="assets/img/pt-3.webp" alt="Lớp yoga tại GỌN" loading="lazy" />
       </div>
