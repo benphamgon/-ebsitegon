@@ -35,16 +35,32 @@ python3 -m http.server 8080
 # mở http://localhost:8080
 ```
 
-## Nhận dữ liệu form
+## Kết nối Google Sheets
 
-Mặc định form chạy chế độ demo (chỉ hiện thông báo cảm ơn). Để nhận dữ liệu thật, điền URL vào `config.js`:
+Cả 3 form (chương trình thành viên, "Bắt đầu thay đổi ngay", popup tư vấn) gửi về cùng một Google Sheet.
+Mặc định `FORM_ENDPOINT` để trống thì form chạy chế độ demo (chỉ hiện thông báo cảm ơn).
 
-```js
-window.GON_CONFIG = { FORM_ENDPOINT: "https://script.google.com/macros/s/XXX/exec" };
-```
+1. Vào [sheets.new](https://sheets.new) tạo một Google Sheet mới, đặt tên ví dụ **GỌN — Khách đăng ký**.
+2. Trong Sheet: **Tiện ích mở rộng → Apps Script**.
+3. Xóa code mặc định, dán toàn bộ nội dung file [`google-apps-script/Code.gs`](google-apps-script/Code.gs), bấm **Lưu**.
+   - Muốn nhận email khi có khách mới: điền email vào `NOTIFY_EMAIL`.
+4. Bấm **Triển khai → Tùy chọn triển khai mới**, chọn loại **Ứng dụng web**:
+   - *Thực thi với tư cách*: **Tôi**
+   - *Người có quyền truy cập*: **Bất kỳ ai**
+5. Bấm **Triển khai**, cấp quyền cho tài khoản Google (nếu hiện "Google chưa xác minh ứng dụng này" → *Nâng cao* → *Đi tới …*).
+6. Copy **URL ứng dụng web** (dạng `https://script.google.com/macros/s/.../exec`) và dán vào `config.js`:
 
-Form gửi `POST` JSON gồm `name`, `phone`, `email`, `address`, `source`, `submittedAt`.
-Có thể dùng Google Apps Script (lưu vào Google Sheets) hoặc Formspree.
+   ```js
+   window.GON_CONFIG = { FORM_ENDPOINT: "https://script.google.com/macros/s/XXXX/exec" };
+   ```
+
+7. Kiểm tra: mở URL đó trên trình duyệt sẽ thấy `{"ok":true,...}`. Gửi thử form trên web → dữ liệu hiện trong tab **Leads**.
+
+Cột trong Sheet: Thời gian (giờ Việt Nam) · Tên · Số điện thoại (Zalo) · Email · Địa chỉ · Nguồn form · Trang.
+
+> Khi sửa `Code.gs` sau này: **Triển khai → Quản lý triển khai → ✏️ → Phiên bản: Phiên bản mới** để giữ nguyên URL.
+
+Có sẵn chống spam (ô ẩn honeypot), kiểm tra số điện thoại và chặn chèn công thức vào Sheet.
 
 ## Đưa lên mạng
 

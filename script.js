@@ -222,24 +222,33 @@
 
   /* ---------- Forms ---------- */
   const endpoint = (window.GON_CONFIG && window.GON_CONFIG.FORM_ENDPOINT) || "";
-  $$("[data-form]").forEach((form) =>
+  $$("[data-form]").forEach((form) => {
+    // Honeypot chống spam: ô ẩn, người thật không thấy để điền.
+    const hp = document.createElement("input");
+    Object.assign(hp, { type: "text", name: "website", tabIndex: -1, autocomplete: "off" });
+    hp.setAttribute("aria-hidden", "true");
+    hp.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0";
+    form.append(hp);
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       if (!form.reportValidity()) return;
       const btn = $("button[type=submit]", form);
       const data = Object.fromEntries(new FormData(form));
-      data.submittedAt = new Date().toISOString();
+      data.page = location.href;
       btn.disabled = true;
       const label = btn.textContent;
       btn.textContent = "ĐANG GỬI...";
       try {
         if (endpoint) {
+          // text/plain = "simple request": không cần preflight CORS (Apps Script không hỗ trợ OPTIONS).
           const res = await fetch(endpoint, {
             method: "POST",
-            headers: { "Content-Type": "text/plain;charset=utf-8", Accept: "application/json" },
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify(data),
           });
-          if (!res.ok) throw new Error(res.status);
+          const out = await res.json().catch(() => ({}));
+          if (!res.ok || out.ok === false) throw new Error(out.error || res.status);
         } else {
           await new Promise((r) => setTimeout(r, 600));
         }
@@ -253,6 +262,6 @@
         btn.disabled = false;
         btn.textContent = label;
       }
-    })
-  );
+    });
+  });
 })();
