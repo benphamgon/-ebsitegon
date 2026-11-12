@@ -219,10 +219,14 @@
     return { el, dx, dy };
   });
 
-  gsap.set(logo, { xPercent: -50, yPercent: -50, x: 0, y: 0, scale: isMobile() ? 2.6 : 2.3, color: "#3a3a3a" });
-  gsap.set(".bl-g", { x: () => -vw() * 0.45, opacity: 0 });
-  gsap.set(".bl-n", { x: () => vw() * 0.45, opacity: 0 });
-  gsap.set([".bl-dots", ".bl-sub"], { opacity: 0, y: 40 });
+  // tâm xoay đặt ở giữa chữ O của logo
+  gsap.set(logo, { xPercent: -50, yPercent: -31.7, transformOrigin: "50% 31.7%", x: 0, y: 0, scale: isMobile() ? 2.6 : 1.9, color: "#3a3536" });
+  gsap.set(".bl-g", { x: -620, opacity: 0 });
+  gsap.set(".bl-n", { x: 620, opacity: 0 });
+  gsap.set(".bl-sub", { opacity: 0, y: 40 });
+  // hàng chấm hiện dần từ chấm giữa (dấu nặng của Ọ) ra hai bên
+  const dotEls = $$(".bl-dot").sort((a, b) => Math.abs(a.dataset.x) - Math.abs(b.dataset.x));
+  gsap.set(dotEls, { scale: 0, opacity: 0, transformOrigin: "50% 50%" });
   gsap.set(brandWords, { opacity: 0.15 });
   collage.forEach(({ el, dx, dy }) => gsap.set(el, { x: dx * 0.9, y: dy * 0.9, scale: 0.6, opacity: 0, rotate: dx > 0 ? 6 : -6 }));
 
@@ -250,12 +254,13 @@
     return `inset(${py}% ${px}% ${py}% ${px}% round ${isMobile() ? 18 : 32}px)`;
   };
   brandTl
-    .to(logo, { scale: isMobile() ? 2.3 : 2.0, color: "#555", duration: 0.24 }, 0)
+    .to(logo, { scale: isMobile() ? 2.3 : 1.7, color: "#5a5354", duration: 0.24 }, 0)
     .to(brandWords, { opacity: 1, duration: 0.2, stagger: { amount: 0.06 } }, 0.02)
     .to(".brand__text", { opacity: 0, y: -60, duration: 0.08 }, 0.27)
     .to(".bl-g, .bl-n", { x: 0, opacity: 1, duration: 0.16, ease: "power2.out" }, 0.3)
-    .to(logo, { scale: 1, color: "#9a9a9a", duration: 0.16, ease: "power2.inOut" }, 0.3)
-    .to([".bl-dots", ".bl-sub"], { opacity: 1, y: 0, duration: 0.1, stagger: 0.03 }, 0.4)
+    .to(logo, { scale: 1, color: "#a29b97", duration: 0.16, ease: "power2.inOut" }, 0.3)
+    .to(dotEls, { scale: 1, opacity: 1, duration: 0.05, stagger: 0.008, ease: "back.out(3)" }, 0.38)
+    .to(".bl-sub", { opacity: 1, y: 0, duration: 0.1 }, 0.42)
     .to(logo, { scale: 0.5, color: "#ffffff", duration: 0.14, ease: "power2.inOut" }, 0.5)
     .to($$(".cl"), { x: 0, y: 0, scale: 1, opacity: 1, rotate: 0, duration: 0.14, stagger: 0.015, ease: "power2.out" }, 0.5)
     .fromTo(".brand__video", { clipPath: "inset(50% 50% 50% 50% round 24px)" }, { clipPath: "inset(0% 0% 0% 0% round 0px)", duration: 0.2, ease: "power2.inOut" }, 0.64)

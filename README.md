@@ -75,3 +75,10 @@ Có sẵn chống spam (ô ẩn honeypot), kiểm tra số điện thoại và c
 - Link Facebook / TikTok / Zalo ở footer
 - Nội dung bài viết blog (hiện là nội dung mẫu)
 - Ảnh / tên huấn luyện viên thật
+
+## Nhận diện thương hiệu (theo GON Brand Guidelines)
+
+- **Logo:** `assets/brand/logo-gon.svg` (bản đặc) và `assets/brand/logo-gon-outline.svg` (bản viền), xuất vector trực tiếp từ file guideline. Logo dùng `currentColor` nên đổi màu theo nền (đen trên nền sáng, trắng trên nền tối).
+- **Font:** Barlow.
+- **Màu:** đen thương hiệu `#231F20`, trắng `#FFFFFF`, vàng `#FCD721`, nâu `#885422`, nền kem `#FFF7E3`. Khai báo ở đầu `styles.css` (`--brand-*`).
+- **Họa tiết:** halftone (chấm lưới) dùng class `halftone` / `halftone--light`.
