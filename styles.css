@@ -62,7 +62,7 @@ p { margin: 0; }
 .link-arrow {
   display: inline-flex; gap: 10px; align-items: center;
   font-size: 14px; font-weight: 600; letter-spacing: .06em;
-  border-bottom: 1px solid currentColor; padding-bottom: 4px;
+  border-bottom: 1px solid currentColor; padding: 14px 0 6px; min-height: 44px;
 }
 .link-arrow span { transition: transform .3s var(--ease); }
 .link-arrow:hover span { transform: translateX(6px); }
@@ -149,7 +149,7 @@ p { margin: 0; }
 .hero__scroll {
   position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-size: 11px; letter-spacing: .3em; color: rgba(255,255,255,.8);
+  font-size: 12px; letter-spacing: .3em; color: rgba(255,255,255,.8);
 }
 .hero__scroll i { width: 1px; height: 40px; background: linear-gradient(#fff, transparent); animation: drip 1.8s infinite; }
 @keyframes drip { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
@@ -454,7 +454,8 @@ p { margin: 0; }
   .coaches { grid-template-columns: 1fr; }
   .cta__body { padding: 32px 24px; }
   .cta__body p br { display: none; }
-  .fab { right: 16px; bottom: 16px; }
+  .fab { right: 14px; bottom: 14px; width: 48px; height: 48px; }
+  .fab svg { width: 19px; height: 19px; }
   .footer__bottom { flex-direction: column; gap: 8px; }
   .stack__card { height: 72vh; }
 }
@@ -480,7 +481,7 @@ p { margin: 0; }
 .no-motion .tour__sound { position: static; opacity: 1; pointer-events: auto; justify-self: center; }
 
 /* ---------- Họa tiết thương hiệu: halftone (chấm lưới) ---------- */
-.halftone { position: relative; isolation: isolate; overflow: clip; }
+.halftone { position: relative; isolation: isolate; overflow: hidden; overflow: clip; }
 .halftone::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
   width: var(--ht-size, 520px); aspect-ratio: 1;
@@ -498,3 +499,7 @@ p { margin: 0; }
 }
 .blog__title::after { margin-inline: auto; }
 .section-head--dark h2::after { background: var(--brand-brown); }
+
+/* Vùng bấm đủ lớn cho ngón tay (≥ 44px) */
+.footer__info a, .footer__bottom a { display: inline-block; padding: 13px 0; margin: -13px 0; }
+.footer__info small { margin-bottom: 4px; }
