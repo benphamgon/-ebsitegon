@@ -132,6 +132,31 @@
     if (e.key === "Escape") $$(".modal:not([hidden])").forEach(closeModal);
   });
 
+  /* ---------- Nạp ảnh trước khi cuộn tới ----------
+     Safari (iPhone) đôi khi không tải ảnh loading="lazy" nằm trong vùng có hiệu ứng
+     (ghim, xoay 3D, mờ dần). Khi một section còn cách ~2 màn hình, chuyển ảnh của nó
+     sang tải ngay. */
+  const lazyImgs = $$('img[loading="lazy"]');
+  if ("IntersectionObserver" in window) {
+    const sections = new Map();
+    lazyImgs.forEach((img) => {
+      const sec = img.closest("section, footer") || img.parentElement;
+      if (!sections.has(sec)) sections.set(sec, []);
+      sections.get(sec).push(img);
+    });
+    const pre = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        (sections.get(e.target) || []).forEach((img) => (img.loading = "eager"));
+        pre.unobserve(e.target);
+      }),
+      { rootMargin: "200% 0px 200% 0px" }
+    );
+    sections.forEach((_, sec) => pre.observe(sec));
+  } else {
+    lazyImgs.forEach((img) => (img.loading = "eager"));
+  }
+
   /* ---------- Toast ---------- */
   const toast = $(".toast");
   let toastT;
