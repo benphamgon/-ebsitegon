@@ -84,14 +84,17 @@
 
     <!-- ============ VIDEO TOUR ============ -->
     <section class="tour">
-      <!-- Bấm để phát video Facebook ngay trong khung (iframe chỉ tải khi bấm) -->
-      <button class="tour__card reveal-scale" data-inline-video="https://www.facebook.com/gonfit/videos/1384315956233112/" aria-label="Xem video giới thiệu GỌN">
-        <img src="assets/img/tour.webp" alt="Quầy lễ tân GỌN Fitness & Yoga" loading="lazy" />
-        <span class="tour__play">
-          <span class="tour__dot"></span>
-          PLAY VIDEO
-        </span>
-      </button>
+      <!-- Video tự phát (tắt tiếng, lặp lại) khi cuộn tới; bấm để bật/tắt âm thanh -->
+      <div class="tour__card tour__card--video reveal-scale">
+        <video class="tour__video" muted loop playsinline preload="none" poster="assets/img/tour-poster.jpg" aria-label="Video giới thiệu GỌN Fitness & Yoga">
+          <source src="assets/video/gon-tour.mp4" type="video/mp4" />
+        </video>
+        <button class="tour__sound" type="button" aria-pressed="false" aria-label="Bật âm thanh">
+          <svg class="ic-off" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
+          <svg class="ic-on" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+          <span>Bật âm thanh</span>
+        </button>
+      </div>
     </section>
 
     <!-- ============ BỘ MÔN ============ -->

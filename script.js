@@ -201,18 +201,33 @@
   };
   $$("[data-open-modal]").forEach((b) => b.addEventListener("click", () => openModal("contactModal")));
 
-  /* ---------- Video Facebook phát ngay trong trang ---------- */
-  $$("[data-inline-video]").forEach((card) =>
-    card.addEventListener("click", () => {
-      const src =
-        "https://www.facebook.com/plugins/video.php?show_text=false&autoplay=true&width=1280&href=" +
-        encodeURIComponent(card.dataset.inlineVideo);
-      const box = document.createElement("div");
-      box.className = "tour__card tour__card--playing";
-      box.innerHTML = `<iframe src="${src}" title="Video giới thiệu GỌN" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>`;
-      card.replaceWith(box);
-    })
-  );
+  /* ---------- Video giới thiệu: tự phát khi cuộn tới, dừng khi cuộn qua ---------- */
+  const tourVideo = $(".tour__video");
+  if (tourVideo) {
+    new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) tourVideo.play().catch(() => {});
+        else tourVideo.pause();
+      },
+      { threshold: 0.35 }
+    ).observe(tourVideo);
+
+    const soundBtn = $(".tour__sound");
+    const setSound = (on) => {
+      tourVideo.muted = !on;
+      soundBtn.setAttribute("aria-pressed", on);
+      const label = on ? "Tắt âm thanh" : "Bật âm thanh";
+      soundBtn.setAttribute("aria-label", label);
+      $("span", soundBtn).textContent = label;
+      if (on) tourVideo.play().catch(() => {});
+    };
+    soundBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setSound(tourVideo.muted);
+    });
+    // Bấm vào video cũng bật/tắt âm thanh
+    tourVideo.addEventListener("click", () => setSound(tourVideo.muted));
+  }
   $$("[data-close-modal]").forEach((b) => b.addEventListener("click", () => closeModal(b.closest(".modal"))));
   addEventListener("keydown", (e) => {
     if (e.key === "Escape") $$(".modal:not([hidden])").forEach(closeModal);
