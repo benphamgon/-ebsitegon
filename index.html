@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GỌN Fitness &amp; Yoga — Live Strong · Live Long · Fit For Life</title>
+  <meta name="description" content="GỌN Fitness & Yoga — Gym, Fitness, Dance, Yoga tại 349A Lạc Long Quân, TP. Hồ Chí Minh. Sức khỏe tốt không cần phức tạp." />
+  <meta property="og:title" content="GỌN Fitness & Yoga" />
+  <meta property="og:description" content="Sức khỏe tốt — không cần phức tạp. Gym, Fitness, Dance, Yoga tại GỌN." />
+  <meta property="og:image" content="assets/img/tour.webp" />
+  <meta name="theme-color" content="#111111" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="top">
+    <a href="#top" class="nav__brand">GỌN FITNESS &amp; YOGA</a>
+    <nav class="nav__links" aria-label="Chính">
+      <a href="#about">About Us</a>
+      <a href="#trainer">Personal Trainer</a>
+      <a href="#service">Service</a>
+      <a href="#blog">Blog</a>
+    </nav>
+    <a class="nav__phone" href="tel:+842871234777">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      0287.1234.777
+    </a>
+    <button class="nav__cta" data-open-modal>Contact us</button>
+    <button class="nav__burger" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#about">About Us</a>
+    <a href="#trainer">Personal Trainer</a>
+    <a href="#service">Service</a>
+    <a href="#blog">Blog</a>
+    <a href="tel:+842871234777">0287.1234.777</a>
+    <button class="btn btn--accent" data-open-modal>Nhận tư vấn</button>
+  </div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__shade"></div>
+
+      <div class="dial" aria-hidden="true">
+        <svg class="dial__svg" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice">
+          <defs>
+            <path id="arcText" d="M -200 470 Q 720 -40 1640 470" />
+          </defs>
+          <g class="dial__rings" fill="none" stroke="#fff">
+            <path d="M -200 470 Q 720 0 1640 470" stroke-width="2" opacity=".9"/>
+            <path d="M -200 520 Q 720 60 1640 520" stroke-width="2" opacity=".9"/>
+          </g>
+          <g class="dial__ticks" id="dialTicks"></g>
+          <polygon points="705,250 735,250 720,232" fill="#fff" />
+        </svg>
+        <div class="dial__words">
+          <span class="is-active">LIVE&nbsp;&nbsp;STRONG</span>
+          <span>LIVE&nbsp;&nbsp;LONG</span>
+          <span>FIT&nbsp;&nbsp;FOR&nbsp;&nbsp;LIFE</span>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Cuộn xuống">
+        <span>SCROLL</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="about">
+      <div class="manifesto__bigO" aria-hidden="true">O</div>
+      <h2 class="manifesto__title split-reveal">Chúng tôi tin rằng để có một sức khỏe tốt — <em>không cần phức tạp</em></h2>
+      <p class="manifesto__text word-reveal">Với các bộ môn như Gym, Fitness, Dance, Yoga, GỌN không chỉ là nơi tập luyện – mà là nơi bạn tìm thấy phiên bản tốt nhất của chính mình, mỗi ngày.</p>
+    </section>
+
+    <!-- ============ VIDEO TOUR ============ -->
+    <section class="tour">
+      <button class="tour__card reveal-scale" data-play-video aria-label="Xem video giới thiệu GỌN">
+        <img src="assets/img/tour.webp" alt="Quầy lễ tân GỌN Fitness & Yoga" loading="lazy" />
+        <span class="tour__play">
+          <span class="tour__dot"></span>
+          PLAY VIDEO
+        </span>
+      </button>
+    </section>
+
+    <!-- ============ BỘ MÔN ============ -->
+    <section class="classes" id="classes">
+      <div class="container">
+        <div class="section-head section-head--dark">
+          <h2 class="reveal">Các bộ môn nổi bật tại GỌN</h2>
+          <div class="reveal">
+            <p>Hành trình chăm sóc sức khỏe là một trải nghiệm mang đậm dấu ấn cá nhân. Hãy khám phá danh sách các bộ môn đa dạng của chúng tôi, từ rèn luyện sức mạnh, tăng cường dẻo dai đến giải phóng năng lượng, để tìm thấy niềm vui và động lực thực sự trên con đường của bạn.</p>
+            <a href="#contact" class="link-arrow">TÌM HIỂU THÊM <span>→</span></a>
+          </div>
+        </div>
+        <div class="classes__grid">
+          <article class="class-col reveal">
+            <div class="class-col__img"><img src="assets/img/mon-gym.webp" alt="Tập gym cùng huấn luyện viên" loading="lazy" /><h3>GYM</h3></div>
+            <ul class="tags">
+              <li>Gym</li><li>Dance</li><li>Zumba</li><li>Pilates</li><li>Boxing</li><li>Kick Boxing</li><li>Group X</li><li>Cycling</li><li>Strength Training</li><li>Body Combat</li>
+            </ul>
+          </article>
+          <article class="class-col reveal">
+            <div class="class-col__img"><img src="assets/img/mon-dance.webp" alt="Lớp dance" loading="lazy" /><h3>DANCE</h3></div>
+            <ul class="tags">
+              <li>Tiktok Dance</li><li>Sexy Dance</li><li>Dance Kid</li><li>Hip Hop</li><li>Ballet</li>
+            </ul>
+          </article>
+          <article class="class-col reveal">
+            <div class="class-col__img"><img src="assets/img/mon-yoga.webp" alt="Lớp yoga" loading="lazy" /><h3>YOGA</h3></div>
+            <ul class="tags">
+              <li>Hatha Yoga</li><li>Vinyasa Yoga</li><li>Astanga Yoga</li><li>Yin Yoga</li><li>Restorative Yoga</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DỊCH VỤ MEMBER ============ -->
+    <section class="services" id="service">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="reveal">Dịch vụ dành cho Member</h2>
+          <p class="reveal">Sau giờ luyện tập căng thẳng là lúc cơ thể bạn cần được thư giãn để tối ưu kết quả tập luyện. GỌN biết điều đó và chúng tôi cho bạn offer cực đã với những dịch vụ chuyên sâu.</p>
+        </div>
+        <div class="stack">
+          <article class="stack__card">
+            <img src="assets/img/locker.webp" alt="Khu tập GỌN" loading="lazy" />
+            <div class="stack__body">
+              <span class="stack__num">01</span>
+              <h3>LOCKER</h3>
+              <p>Tủ đồ cá nhân an toàn, phòng thay đồ sạch sẽ và tiện nghi — để bạn đến tập nhẹ nhàng, ra về gọn gàng.</p>
+            </div>
+          </article>
+          <article class="stack__card">
+            <img src="assets/img/sauna.webp" alt="Phòng xông hơi Sauna" loading="lazy" />
+            <div class="stack__body">
+              <span class="stack__num">02</span>
+              <h3>SAUNA</h3>
+              <p>Xông hơi khô sau buổi tập giúp cơ bắp thả lỏng, tăng tuần hoàn máu và đẩy nhanh quá trình phục hồi — để buổi tập tiếp theo luôn sung sức.</p>
+            </div>
+          </article>
+          <article class="stack__card">
+            <img src="assets/img/stretching.webp" alt="Dịch vụ stretching" loading="lazy" />
+            <div class="stack__body">
+              <span class="stack__num">03</span>
+              <h3>STRETCHING</h3>
+              <p>Giãn cơ chuyên sâu cùng chuyên viên giúp giải phóng căng cứng, cải thiện biên độ vận động và giảm nguy cơ chấn thương sau những buổi tập cường độ cao.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHƯƠNG TRÌNH THÀNH VIÊN ============ -->
+    <section class="member">
+      <img class="member__bg" src="assets/img/member-bg.webp" alt="" aria-hidden="true" loading="lazy" />
+      <div class="container member__grid">
+        <div class="member__intro reveal">
+          <h2>Giới thiệu chương trình thành viên</h2>
+          <p>Một phiên tập chuyên sâu dành riêng cho bạn cùng Master Yoga. Chương trình giúp bạn đi sâu vào từng tư thế (asana), chỉnh sửa định tuyến chi tiết và khám phá sự kết nối giữa cơ thể và hơi thở. Tìm lại sự cân bằng, tăng cường dẻo dai và tĩnh tại trong tâm trí.</p>
+        </div>
+        <div class="member__panel reveal">
+          <div class="member__card"><img src="assets/img/member-card.webp" alt="Thẻ thành viên GỌN Platinum" loading="lazy" /></div>
+          <form class="form" data-form>
+            <h3>Nhận tư vấn<br />Chương trình thành viên</h3>
+            <label>Tên<input name="name" required placeholder="Nhập tên bạn" autocomplete="name" /></label>
+            <label>Số điện thoại (Zalo)<input name="phone" required type="tel" placeholder="Nhập số điện thoại" autocomplete="tel" pattern="[0-9 +.]{9,15}" /></label>
+            <input type="hidden" name="source" value="Chương trình thành viên" />
+            <button class="btn btn--accent" type="submit">GỬI THÔNG TIN</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PT SLIDER ============ -->
+    <section class="pt" id="trainer">
+      <div class="pt__slides">
+        <img class="pt__slide is-active" src="assets/img/pt-1.webp" alt="Huấn luyện viên cá nhân hướng dẫn tập" />
+        <img class="pt__slide" src="assets/img/pt-2.webp" alt="Hội viên tập luyện cùng PT" loading="lazy" />
+        <img class="pt__slide" src="assets/img/pt-3.webp" alt="Lớp yoga tại GỌN" loading="lazy" />
+      </div>
+      <div class="pt__shade"></div>
+      <h2 class="pt__title">Huấn luyện viên<br />cá nhân</h2>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track">
+        <span>LIVE STRONG ● LIVE LONG ● FIT FOR LIFE ● LIVE STRONG ● LIVE LONG ● FIT FOR LIFE ●&nbsp;</span>
+        <span>LIVE STRONG ● LIVE LONG ● FIT FOR LIFE ● LIVE STRONG ● LIVE LONG ● FIT FOR LIFE ●&nbsp;</span>
+      </div></div>
+      <div class="pt__tabs" role="tablist">
+        <button class="pt__tab is-active" role="tab">
+          <strong>Thiết kế bài tập hợp thể trạng</strong>
+          <span>Lộ trình được cá nhân hóa theo chỉ số cơ thể, mục tiêu và lịch sinh hoạt của riêng bạn.</span>
+          <em>Nhận tư vấn</em><i class="pt__bar"><b></b></i>
+        </button>
+        <button class="pt__tab" role="tab">
+          <strong>Huấn luyện viên cá nhân chuyên nghiệp nhất Việt Nam</strong>
+          <span>Đội ngũ PT có chứng chỉ, giàu kinh nghiệm thực chiến và luôn đồng hành sát sao từng buổi tập.</span>
+          <em>Nhận tư vấn</em><i class="pt__bar"><b></b></i>
+        </button>
+        <button class="pt__tab" role="tab">
+          <strong>Theo dõi tiến độ mỗi tuần</strong>
+          <span>Đo lường InBody định kỳ, điều chỉnh giáo án và dinh dưỡng để kết quả đến nhanh và bền vững.</span>
+          <em>Nhận tư vấn</em><i class="pt__bar"><b></b></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ ĐỘI NGŨ PT ============ -->
+    <section class="team">
+      <div class="container team__grid">
+        <div class="team__left">
+          <p class="eyebrow">✺ Đội ngũ PT</p>
+          <p class="team__lead reveal">Đội ngũ PT của GỌN tự tin mang đến cho bạn những buổi tập hiệu quả, an toàn và đầy cảm hứng. Với những cam kết từ chúng tôi:</p>
+          <ol class="pledges">
+            <li class="reveal"><div><b>Cam kết</b><span>01</span></div><p>Huấn luyện viên có chứng chỉ, tập thông minh và hết mình — đồng hành cùng bạn, không đứng trên bạn.</p></li>
+            <li class="reveal"><div><b>Cam kết</b><span>02</span></div><p>Những buổi tập đẫm mồ hôi, tim đập rộn ràng khiến bạn muốn quay lại mỗi ngày.</p></li>
+            <li class="reveal"><div><b>Cam kết</b><span>03</span></div><p>Giảm cân hay tăng cơ — chúng tôi đều tập luyện theo một kế hoạch rõ ràng.</p></li>
+            <li class="reveal"><div><b>Cam kết</b><span>04</span></div><p>Giáo án hiệu quả đã được kiểm chứng thực tế — không chỉ để đăng Instagram.</p></li>
+          </ol>
+        </div>
+        <div class="coaches">
+          <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-thomas.webp" alt="HLV Thomas Nguyen" loading="lazy" /></div><figcaption><b>Thomas Nguyen</b><span>Kickfit Training</span></figcaption></figure>
+          <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-vivian.webp" alt="HLV Vivian Le" loading="lazy" /></div><figcaption><b>Vivian Le</b><span>Yoga Master</span></figcaption></figure>
+          <figure class="coach reveal"><div class="coach__img"><img src="assets/img/coach-lucy.webp" alt="HLV Lucy Nguyen" loading="lazy" /></div><figcaption><b>Lucy Nguyen</b><span>Tiktok Dance</span></figcaption></figure>
+          <a href="#contact" class="link-arrow">Tất cả huấn luyện viên <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KẾT QUẢ ============ -->
+    <section class="results">
+      <div class="container">
+        <blockquote class="results__quote reveal">
+          <p>“Thành công không đến từ may mắn, mà từ những giọt mồ hôi và một lộ trình đúng đắn. Những hình ảnh này là minh chứng sống cho sự kết hợp hoàn hảo giữa nỗ lực đáng kinh ngạc của hội viên và sự dẫn dắt chuyên nghiệp, tận tâm từ GỌN.”</p>
+          <cite>Chị A — Học viên lớp YOGA</cite>
+        </blockquote>
+      </div>
+      <div class="carousel" aria-label="Hình ảnh trước và sau">
+        <div class="carousel__track">
+          <figure><img src="assets/img/before-1.webp" alt="Trước khi tập" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure><img src="assets/img/before-2.webp" alt="Trước khi tập" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-1.webp" alt="Sau 3 tháng" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-2.webp" alt="Sau 3 tháng" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure><img src="assets/img/before-1.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure><img src="assets/img/before-2.webp" alt="" loading="lazy" /><figcaption>Trước</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-1.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+          <figure class="is-after"><img src="assets/img/after-2.webp" alt="" loading="lazy" /><figcaption>Sau 3 tháng</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORM ĐĂNG KÝ ============ -->
+    <section class="signup" id="contact">
+      <div class="container">
+        <h2 class="reveal">Bắt đầu thay đổi ngay</h2>
+        <form class="form form--wide reveal" data-form>
+          <label>Tên<input name="name" required placeholder="Nhập tên bạn" autocomplete="name" /></label>
+          <label>Số điện thoại (Zalo)<input name="phone" required type="tel" placeholder="Nhập số điện thoại" autocomplete="tel" pattern="[0-9 +.]{9,15}" /></label>
+          <label>Email<input name="email" type="email" placeholder="Nhập email" autocomplete="email" /></label>
+          <label>Địa chỉ<input name="address" placeholder="Nhập địa chỉ" autocomplete="street-address" /></label>
+          <input type="hidden" name="source" value="Bắt đầu thay đổi ngay" />
+          <button class="btn btn--accent" type="submit">GỬI THÔNG TIN</button>
+        </form>
+      </div>
+      <svg class="signup__dial" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><g id="signupTicks" stroke="#fff" opacity=".35"></g><path d="M0 170 Q720 30 1440 170" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1.5"/></svg>
+    </section>
+
+    <!-- ============ BLOG ============ -->
+    <section class="blog" id="blog">
+      <div class="container">
+        <h2 class="blog__title reveal">Bài viết mới</h2>
+        <div class="blog__cols">
+          <div>
+            <h3 class="blog__cat">Tin tức</h3>
+            <a class="post reveal" href="#"><img src="assets/img/blog-1.webp" alt="" loading="lazy" /><div><time datetime="2025-07-05">05/07/2025</time><p>GỌN khai trương phòng Yoga mới với không gian xanh, ngập tràn ánh sáng tự nhiên</p><span>Xem thêm</span></div></a>
+            <a class="post reveal" href="#"><img src="assets/img/blog-2.webp" alt="" loading="lazy" /><div><time datetime="2025-07-05">05/07/2025</time><p>Ra mắt phòng Group X — lịch lớp Zumba, Body Combat và Cycling tháng này</p><span>Xem thêm</span></div></a>
+          </div>
+          <div>
+            <h3 class="blog__cat">Blog</h3>
+            <a class="post reveal" href="#"><img src="assets/img/blog-3.webp" alt="" loading="lazy" /><div><time datetime="2025-07-05">05/07/2025</time><p>Kickboxing cho người mới: 5 lợi ích bạn sẽ cảm nhận ngay sau tuần đầu tiên</p><span>Xem thêm</span></div></a>
+            <a class="post reveal" href="#"><img src="assets/img/blog-4.webp" alt="" loading="lazy" /><div><time datetime="2025-07-05">05/07/2025</time><p>Vì sao giãn cơ sau tập quan trọng không kém chính buổi tập?</p><span>Xem thêm</span></div></a>
+          </div>
+        </div>
+        <a href="#" class="link-arrow blog__all">Tất cả bài viết <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta__card reveal-scale">
+          <img src="assets/img/cta.webp" alt="" aria-hidden="true" loading="lazy" />
+          <div class="cta__body">
+            <h2>Bắt đầu thay đổi<br />ngay hôm nay</h2>
+            <p>Đa dạng lớp học được thiết kế để phù hợp<br />đúng với điểm xuất phát của bạn.</p>
+            <button class="btn btn--accent" data-open-modal>NHẬN TƯ VẤN</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__social">
+        <p>Theo dõi GỌN nhé</p>
+        <a href="https://facebook.com" target="_blank" rel="noopener">FACEBOOK</a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener">TIKTOK</a>
+        <a href="https://zalo.me/02871234777" target="_blank" rel="noopener">ZALO</a>
+      </div>
+      <div class="footer__main">
+        <p class="footer__quote">Thành công không đến từ may mắn, mà từ những giọt mồ hôi và một lộ trình đúng đắn. GỌN đồng hành cùng bạn trên từng bước của hành trình ấy.</p>
+        <div class="footer__info">
+          <div class="logo" aria-label="GỌN Fitness & Yoga">
+            <span class="logo__word">GON</span>
+            <span class="logo__dots"><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="logo__sub">FITNESS &amp; YOGA</span>
+          </div>
+          <div><small>Hotline</small><a href="tel:+842871234777">0287.1234.777</a></div>
+          <div><small>Email</small><a href="mailto:contact@gonfit.vn">contact@gonfit.vn</a></div>
+          <div><small>Địa chỉ</small><a href="https://maps.google.com/?q=349A+L%E1%BA%A1c+Long+Qu%C3%A2n+TP.+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" rel="noopener">349A Lạc Long Quân<br />Phường Hòa Bình, TP. Hồ Chí Minh</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span data-year></span> GỌN Fitness &amp; Yoga</span>
+      <a href="#top">Lên đầu trang ↑</a>
+    </div>
+  </footer>
+
+  <!-- Floating contact -->
+  <button class="fab" data-open-modal aria-label="Nhận tư vấn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 2.6 2.9 10.1c-1 .4-.9 1.8.1 2.1l6.7 1.9 1.9 6.7c.3 1 1.7 1.1 2.1.1l7.5-18.5c.3-.8-.5-1.6-1.3-1.3z"/></svg>
+  </button>
+
+  <!-- Modal: form -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__box">
+      <button class="modal__close" data-close-modal aria-label="Đóng">×</button>
+      <h3 id="modalTitle">Nhận tư vấn từ GỌN</h3>
+      <form class="form" data-form>
+        <label>Tên<input name="name" required placeholder="Nhập tên bạn" autocomplete="name" /></label>
+        <label>Số điện thoại (Zalo)<input name="phone" required type="tel" placeholder="Nhập số điện thoại" autocomplete="tel" pattern="[0-9 +.]{9,15}" /></label>
+        <label>Email<input name="email" type="email" placeholder="Nhập email" autocomplete="email" /></label>
+        <label>Địa chỉ<input name="address" placeholder="Nhập địa chỉ" autocomplete="street-address" /></label>
+        <input type="hidden" name="source" value="Popup tư vấn" />
+        <button class="btn btn--accent" type="submit">GỬI THÔNG TIN</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: video -->
+  <div class="modal modal--video" id="videoModal" role="dialog" aria-modal="true" aria-label="Video giới thiệu" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__video">
+      <button class="modal__close" data-close-modal aria-label="Đóng">×</button>
+      <video controls playsinline preload="none" poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
