@@ -386,10 +386,9 @@ p { margin: 0; }
 .modal__close { position: absolute; right: 12px; top: 8px; font-size: 32px; line-height: 1; width: 44px; height: 44px; color: rgba(255,255,255,.7); z-index: 2; }
 .modal__close:hover { color: #fff; }
 .modal__video { position: relative; width: min(1100px, 100%); animation: pop .4s var(--ease); }
-.modal__frame { width: 100%; aspect-ratio: 16 / 9; max-height: 80vh; border-radius: 16px; overflow: hidden; background: #000; }
-.modal__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
-.modal__fblink { display: block; margin-top: 12px; text-align: center; font-size: 14px; color: rgba(255,255,255,.7); }
-.modal__fblink:hover { color: var(--accent); }
+.tour__card--playing { aspect-ratio: 16 / 9; background: #000; }
+.tour__card--playing::after { display: none; }
+.tour__card--playing iframe { width: 100%; height: 100%; border: 0; display: block; }
 .modal__video .modal__close { top: -48px; right: 0; }
 @keyframes fade { from { opacity: 0; } }
 @keyframes pop { from { opacity: 0; transform: translateY(20px) scale(.97); } }
@@ -449,6 +448,7 @@ p { margin: 0; }
   .manifesto { padding: 120px 16px 100px; }
   .tour { padding: 0 16px 100px; }
   .tour__card { border-radius: 24px; aspect-ratio: 4 / 5; }
+  .tour__card.tour__card--playing { aspect-ratio: 16 / 9; }
   .classes, .services, .team { padding-top: 90px; }
   .member { padding: 100px 0; }
   .form--wide { grid-template-columns: 1fr; }

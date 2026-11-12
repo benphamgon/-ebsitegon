@@ -84,7 +84,8 @@
 
     <!-- ============ VIDEO TOUR ============ -->
     <section class="tour">
-      <button class="tour__card reveal-scale" data-play-video aria-label="Xem video giới thiệu GỌN">
+      <!-- Bấm để phát video Facebook ngay trong khung (iframe chỉ tải khi bấm) -->
+      <button class="tour__card reveal-scale" data-inline-video="https://www.facebook.com/gonfit/videos/1384315956233112/" aria-label="Xem video giới thiệu GỌN">
         <img src="assets/img/tour.webp" alt="Quầy lễ tân GỌN Fitness & Yoga" loading="lazy" />
         <span class="tour__play">
           <span class="tour__dot"></span>
@@ -358,17 +359,6 @@
         <input type="hidden" name="source" value="Popup tư vấn" />
         <button class="btn btn--accent" type="submit">GỬI THÔNG TIN</button>
       </form>
-    </div>
-  </div>
-
-  <!-- Modal: video -->
-  <div class="modal modal--video" id="videoModal" role="dialog" aria-modal="true" aria-label="Video giới thiệu" hidden>
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__video">
-      <button class="modal__close" data-close-modal aria-label="Đóng">×</button>
-      <!-- Video Facebook: iframe được tạo khi mở popup (script.js) để không tải trước và dừng khi đóng -->
-      <div class="modal__frame" data-fb-video="https://www.facebook.com/gonfit/videos/1384315956233112/"></div>
-      <a class="modal__fblink" href="https://www.facebook.com/gonfit/videos/1384315956233112/" target="_blank" rel="noopener">Không xem được? Mở video trên Facebook ↗</a>
     </div>
   </div>
 

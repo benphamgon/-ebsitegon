@@ -193,23 +193,26 @@
     document.body.style.overflow = "hidden";
     const f = $("input", m);
     if (f) setTimeout(() => f.focus(), 50);
-    const fb = $("[data-fb-video]", m);
-    if (fb) {
-      const src =
-        "https://www.facebook.com/plugins/video.php?show_text=false&autoplay=true&width=1280&href=" +
-        encodeURIComponent(fb.dataset.fbVideo);
-      fb.innerHTML = `<iframe src="${src}" title="Video giới thiệu GỌN" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>`;
-    }
   };
   const closeModal = (m) => {
     m.hidden = true;
     document.body.style.overflow = "";
-    const fb = $("[data-fb-video]", m);
-    if (fb) fb.innerHTML = ""; // gỡ iframe để dừng phát
     if (lastFocus) lastFocus.focus();
   };
   $$("[data-open-modal]").forEach((b) => b.addEventListener("click", () => openModal("contactModal")));
-  $$("[data-play-video]").forEach((b) => b.addEventListener("click", () => openModal("videoModal")));
+
+  /* ---------- Video Facebook phát ngay trong trang ---------- */
+  $$("[data-inline-video]").forEach((card) =>
+    card.addEventListener("click", () => {
+      const src =
+        "https://www.facebook.com/plugins/video.php?show_text=false&autoplay=true&width=1280&href=" +
+        encodeURIComponent(card.dataset.inlineVideo);
+      const box = document.createElement("div");
+      box.className = "tour__card tour__card--playing";
+      box.innerHTML = `<iframe src="${src}" title="Video giới thiệu GỌN" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      card.replaceWith(box);
+    })
+  );
   $$("[data-close-modal]").forEach((b) => b.addEventListener("click", () => closeModal(b.closest(".modal"))));
   addEventListener("keydown", (e) => {
     if (e.key === "Escape") $$(".modal:not([hidden])").forEach(closeModal);
